@@ -5,7 +5,7 @@
       aria-labelledby="Załączniki"
       role="button"
       tabindex="0"
-      (keydown)="clickTab(1)"
+      (keypress)="clickTab(1)"
       (click)="clickTab(1)"
       [ngClass]="{
         'display3 border-primary-b border-solid border-b-4': tab === 1
@@ -17,7 +17,7 @@
       aria-labelledby="Historia"
       role="button"
       tabindex="2"
-      (keydown)="clickTab(2)"
+      (keypress)="clickTab(2)"
       (click)="clickTab(2)"
       [ngClass]="{
         'display3 border-primary-b border-solid border-b-4': tab === 2

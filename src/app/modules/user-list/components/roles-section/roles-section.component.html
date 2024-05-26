@@ -8,7 +8,7 @@
       role="button"
       tabindex="0"
       (click)="clickTab(1)"
-      (keydown)="clickTab(1)"
+      (keypress)="clickTab(1)"
       [ngClass]="{
         'display3 border-primary-b border-solid border-b-4': tab === 1
       }"
@@ -21,7 +21,7 @@
       role="button"
       tabindex="1"
       (click)="clickTab(2)"
-      (keydown)="clickTab(2)"
+      (keypress)="clickTab(2)"
       [ngClass]="{
         'display3 border-primary-b border-solid border-b-4': tab === 2
       }"

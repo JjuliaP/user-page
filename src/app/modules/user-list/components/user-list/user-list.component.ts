@@ -25,7 +25,7 @@ type UserForm = {
 };
 
 type PermissionForm = {
-  role: FormControl<{
+  crudPermissions: FormGroup<{
     [key: string]: FormGroup<{
       create: FormControl<boolean | null>;
       read: FormControl<boolean | null>;
@@ -33,7 +33,7 @@ type PermissionForm = {
       delete: FormControl<boolean | null>;
     }>;
   }>;
-  crudPermissions: FormGroup<any>;
+  role: FormControl<string | null>;
 };
 
 @Component({
@@ -73,8 +73,8 @@ export class UserListComponent implements OnInit {
     ]),
   });
   public permissionsGroup: FormGroup<PermissionForm> = new FormGroup({
-    role: new FormControl({} as any, [Validators.required]), // TODO fix
-    crudPermissions: new FormGroup(''),
+    crudPermissions: new FormGroup({}),
+    role: new FormControl(''), // TODO fix type
   });
   public crudPermissionsGroup: FormGroup = new FormGroup({});
   public permissionItems: PermissionItem[] = [
