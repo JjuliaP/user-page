@@ -1,0 +1,51 @@
+<div
+  for="file-input"
+  class="file-drop border border-dashed border-ui-g5 px-6 py-5 flex items-center flex-col rounded-[4px] ml-auto overflow-y-auto h-[155px]"
+  [class.drag-over]="isDragOver"
+  (dragover)="onDragOver($event)"
+  (dragleave)="onDragLeave($event)"
+  (drop)="onDrop($event)"
+  (click)="file.click()"
+  (keydown.enter)="file.click()"
+  aria-labelledby="file input"
+  role="button"
+  tabindex="0">
+  <img
+    src="../../../../../assets/icons/spreadsheets-34.svg"
+    alt="file upload" />
+
+  <ng-container *ngIf="!files.length; else filesContainer">
+    <p class="display3 text-primary-b mb-1 mt-2">Drag and drop files</p>
+    <p class="text-ui-g4 input2 text-center">
+      Drag and drop files or select from your files
+    </p>
+  </ng-container>
+
+  <ng-template #filesContainer>
+    <div class="file-drop__files flex flex-col items-center">
+      <div class="block display3 text-primary-b mb-1 mt-2">
+        Total: {{ files.length }} {{ files.length | i18nPlural: pluralMap }}
+      </div>
+      <div
+        class="text-ui-g4 input2 text-center flex flex-row flex-wrap gap-2 items-center justify-around mt-1">
+        <span class="file-drop__file" *ngFor="let file of files">
+          {{ file.name }}
+          <button
+            class="ml-2 cursor-pointer border-none inline-block"
+            (click)="onFileRemoveClick(file); $event.stopPropagation()">
+            &times;
+          </button>
+        </span>
+      </div>
+    </div>
+  </ng-template>
+
+  <input
+    #file
+    tabindex="0"
+    id="file-input"
+    class="hidden"
+    type="file"
+    (change)="onFileInputChange($any($event.target).files)"
+    multiple />
+</div>

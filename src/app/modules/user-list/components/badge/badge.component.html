@@ -1,11 +1,12 @@
 <div
-  class="hover-focus py-[2px] px-[6px] button text-primary-w rounded text-center"
+  class="hover-focus py-[2px] px-[6px] button text-primary-w rounded text-center border"
   [class.bg-supporting-3]="color === 'red'"
   [class.bg-supporting-6]="color === 'green'"
   [class.bg-ui-g5]="color === 'grey'"
   [class.bg-secondary-b-lighten20]="color === 'blue'"
   [ngClass]="{
-    'border border-ui-g5 bg-white text-ui-g5 py-[1px] px-[5px]': !!control.value
+    'border-ui-g5 bg-white text-ui-g5 ': !!control.value,
+    'border-primary-w': !control.value
   }"
   (click)="onBadgeClick()"
   (keydown.enter)="onBadgeClick()"

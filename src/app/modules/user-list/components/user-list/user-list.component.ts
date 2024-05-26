@@ -13,7 +13,7 @@ type UserInfoFormFields = {
   lastName: string;
   birthday: string;
   citizenship: Array<ChipOption>;
-  files: string;
+  files: Array<string>;
   instagram: string;
   email: string;
   tweeter: string;
@@ -50,32 +50,23 @@ export class UserListComponent implements OnInit {
   public userInfoGroup: FormGroup<UserForm> = new FormGroup({
     firstName: new FormControl('', [
       Validators.required,
-      Validators.minLength(5),
+      Validators.minLength(2),
     ]),
     lastName: new FormControl('', [
       Validators.required,
-      Validators.minLength(5),
+      Validators.minLength(2),
     ]),
     birthday: new FormControl('', [Validators.required]),
-    citizenship: new FormControl<ChipOption[]>([], [Validators.required]),
-    files: new FormControl('', [Validators.required]),
-    instagram: new FormControl('', [
-      Validators.required,
-      Validators.minLength(5),
-    ]),
-    email: new FormControl('', [Validators.required, Validators.minLength(5)]),
-    tweeter: new FormControl('', [
-      Validators.required,
-      Validators.minLength(5),
-    ]),
-    facebook: new FormControl('', [
-      Validators.required,
-      Validators.minLength(5),
-    ]),
+    citizenship: new FormControl<ChipOption[]>([]),
+    files: new FormControl<string[]>([]),
+    instagram: new FormControl(''),
+    email: new FormControl(''),
+    tweeter: new FormControl(''),
+    facebook: new FormControl(''),
   });
   public permissionsGroup: FormGroup<PermissionForm> = new FormGroup({
     crudPermissions: new FormGroup({}),
-    role: new FormControl<ChipOption[]>([], [Validators.required]),
+    role: new FormControl<ChipOption[]>([]),
   });
   public crudPermissionsGroup: FormGroup = new FormGroup({});
   public permissionItems: PermissionItem[] = [
@@ -143,8 +134,11 @@ export class UserListComponent implements OnInit {
     );
 
     this.userDataForm.setControl('permissions', this.permissionsGroup);
+    this.userDataForm.setControl('userInfo', this.userInfoGroup);
     this.userInfoGroup.valueChanges.subscribe(console.log);
   }
 
   public onFormSubmit() {}
+
+  public onBlockClick() {}
 }

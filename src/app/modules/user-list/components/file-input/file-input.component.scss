@@ -1,0 +1,21 @@
+.file-drop {
+  transition: background-color 0.3s;
+
+  &.drag-over {
+    animation: file-input-bg 2.5s infinite;
+  }
+}
+
+@keyframes file-input-bg {
+  0% {
+    background-color: var(--ui-g4);
+  }
+
+  50% {
+    background-color: var(--ui-g5);
+  }
+
+  100% {
+    background-color: var(--ui-g6);
+  }
+}
