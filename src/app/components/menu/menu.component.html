@@ -4,7 +4,14 @@
   <button
     class="sidebar__toggle-btn w-6 h-6 mb-[50px]"
     (click)="onToggleSidebarClick()">
-    <img src="../../../assets/icons/hamburger-24.svg" alt="Hamburger icon" />
+    <img
+      *ngIf="!isSidebarOpen"
+      src="../../../assets/icons/hamburger-24.svg"
+      alt="Hamburger icon" />
+    <img
+      *ngIf="isSidebarOpen"
+      src="../../../assets/icons/hamburger-close-24.svg"
+      alt="Hamburger icon" />
   </button>
   <div
     class="sidebar__date flex flex-col items-start gap-[3px] border-b border-secondary-bg-lighten90 mb-6 pb-4">
@@ -22,22 +29,24 @@
     <ul class="sidebar__nav-items">
       <li class="nav-item">
         <div class="nav-item__title items-center grid">
-          <span class="nav-item__icon w-10 h-10 flex items-center mr-3">
+          <span class="nav-item__icon w-10 h-10 flex items-center">
             <img
               src="../../../assets/icons/raporty-40.svg"
               alt="Raporty icon" />
           </span>
-          <span class="nav-item__label body3">Statistics</span>
+          <span class="nav-item__label body3 ml-3">Statistics</span>
         </div>
       </li>
       <li class="nav-item active">
         <div class="nav-item__title items-center grid">
-          <span class="nav-item__icon w-10 h-10 flex items-center mr-3">
+          <span class="nav-item__icon w-10 h-10 flex items-center">
             <img
               src="../../../assets/icons/odbiorcy-40.svg"
               alt="Odbiorcy icon" />
           </span>
-          <span class="nav-item__label display3 text-primary-b">Users</span>
+          <span class="nav-item__label display3 text-primary-b ml-3"
+            >Users</span
+          >
         </div>
         <ul
           class="nav-item__subitems list-square text-ui-g3 body3"
@@ -45,7 +54,11 @@
           <li
             [ngClass]="{ 'text-primary-b': selectedMenuItem === item.name }"
             (click)="onMenuItemClick(item.name)"
-            *ngFor="let item of menuItems">
+            (keypress)="onMenuItemClick(item.name)"
+            *ngFor="let item of menuItems; let i = index"
+            [attr.aria-labelledby]="item.name"
+            [attr.tabindex]="i"
+            role="button">
             {{ item.name }}
           </li>
         </ul>

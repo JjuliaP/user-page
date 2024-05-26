@@ -11,9 +11,12 @@ $nav-btn-size: 24px;
   line-height: 31px;
 }
 
+:host {
+  grid-area: aside;
+}
+
 .sidebar {
   display: grid;
-  grid-area: aside;
   grid-template-columns: $nav-padding auto $nav-padding;
   grid-template-rows: $nav-padding repeat(6, max-content);
 
@@ -82,9 +85,13 @@ $nav-btn-size: 24px;
     &__subitems {
       display: none;
     }
+
+    &__title {
+            grid-template-columns: auto max-content auto;
+          }
   }
   & .sidebar__date {
     align-items: center;
-    grid-column: 1/-1;
+    max-width: 2ch;
   }
 }
