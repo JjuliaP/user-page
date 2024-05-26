@@ -3,6 +3,7 @@
   [class.bg-signal-error]="color === 'signal-error'"
   [class.bg-primary-y]="color === 'primary-y'"
   [class.bg-primary-bg]="color === 'primary-bg'"
-  [class.bg-primary-b]="color === 'primary-b'">
+  [class.bg-primary-b]="color === 'primary-b'"
+  (click)="onButtonClick()">
   {{ text.toUpperCase() }}
 </button>

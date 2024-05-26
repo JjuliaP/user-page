@@ -53,7 +53,7 @@
                 First name is required.
               </div>
               <div *ngIf="form.controls['firstName'].errors?.['minlength']">
-                First name must be at least 5 characters long.
+                First name must be at least 2 characters long.
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@
               class="bg-primary-w text-ui-g1 input1 border-ui-g5 border px-3 py-3 rounded-sm w-full" />
 
             <div
-              class="text-signal-error input2 mb-4"
+              class="text-signal-error input2"
               *ngIf="
                 form.controls['lastName'].invalid &&
                 (form.controls['lastName'].dirty ||
@@ -79,7 +79,7 @@
                 Last name is required.
               </div>
               <div *ngIf="form.controls['lastName'].errors?.['minlength']">
-                Last name must be at least 5 characters long.
+                Last name must be at least 2 characters long.
               </div>
             </div>
           </div>
@@ -89,27 +89,27 @@
               >Birth date</label
             ><br />
             <input
+              placeholder=" 1"
               id="birthday"
-              type="text"
+              type="date"
               formControlName="birthday"
-              class="bg-primary-w text-ui-g1 input1 border-ui-g5 border px-3 py-3 rounded-sm w-full" />
+              class="bg-primary-w text-ui-g1 input1 border-ui-g5 border px-3 py-3 rounded-sm w-full h-10" />
+
+            <div
+              class="text-signal-error input2"
+              *ngIf="
+                form.controls['birthday'].invalid &&
+                (form.controls['birthday'].dirty ||
+                  form.controls['birthday'].touched)
+              ">
+              <div *ngIf="form.controls['birthday'].errors?.['required']">
+                Birth date is required.
+              </div>
+            </div>
           </div>
         </div>
         <div class="basis-1/2 flex gap-4 flex-col">
-          <div class="drag-n-drop">
-            <div
-              class="border border-dashed border-ui-g5 px-6 py-5 flex justify-center items-center flex-col rounded-[4px] flex-grow">
-              <img
-                src="../../../../../assets/icons/spreadsheets-34.svg"
-                alt="file upload" />
-              <span class="display3 text-primary-b mb-1 mt-4"
-                >Drag and drop files
-              </span>
-              <span class="text-ui-g4 input2 text-center">
-                Drag and drop filesor select from your files
-              </span>
-            </div>
-          </div>
+          <app-file-input formControlName="files"></app-file-input>
           <div>
             <label for="citizenship" class="text-ui-g1 input2 mb-1"
               >Citizenship</label
@@ -155,12 +155,12 @@
             ><br />
             <input
               id="email"
-              type="text"
+              type="email"
               formControlName="email"
               class="bg-primary-w text-ui-g1 input1 border-ui-g5 border px-3 py-3 rounded-sm w-full" />
 
             <div
-              class="text-signal-error input2 mb-4"
+              class="text-signal-error input2"
               *ngIf="
                 form.controls['email'].invalid &&
                 (form.controls['email'].dirty || form.controls['email'].touched)

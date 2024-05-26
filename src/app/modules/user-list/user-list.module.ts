@@ -8,6 +8,7 @@ import { RolesSectionComponent } from './components/roles-section/roles-section.
 import { BadgeComponent } from './components/badge/badge.component';
 import { FormSectionComponent } from './components/form-section/form-section.component';
 import { ChipsSelectComponent } from './components/chips-select/chips-select.component';
+import { FileInputComponent } from './components/file-input/file-input.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ChipsSelectComponent } from './components/chips-select/chips-select.com
     BadgeComponent,
     RolesSectionComponent,
     ChipsSelectComponent,
+    FileInputComponent,
   ],
   imports: [CommonModule, UserListRoutingModule, ReactiveFormsModule],
   exports: [ButtonComponent],

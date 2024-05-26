@@ -1,0 +1,6 @@
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: block;
+    background: url("../../../../../assets/icons/calendar-25.svg") no-repeat;
+    width: 20px;
+    height: 20px;
+}
