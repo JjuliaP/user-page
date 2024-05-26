@@ -3,8 +3,8 @@
         <div (click) = "clickTab(1)" [ngClass]="{'display3 border-primary-b border-solid border-b-4': tab === 1}" class="cursor-pointer px-5 py-2 body3">Załączniki</div>
         <div (click) = "clickTab(2)" [ngClass]="{'display3 border-primary-b border-solid border-b-4': tab === 2}" class="cursor-pointer  px-5 py-2 body3">Historia</div>
     </div>
-    <div class="px-4 border-ui-g5 border-t">
-        <form (ngSubmit)="onFormSubmit()" [formGroup]="signUpForm">
+    <div class="px-4 border-ui-g5 border-t" *ngIf="form" [formGroup]="form">
+        <div>
             <h3 class="px-4 text-supporting-7 pt-6 pb-4 border-ui-g5 border-b mb-[10px]">
                 Załączniki
             </h3>
@@ -16,12 +16,12 @@
                         <input id="first-name" type="text" formControlName="firstName" class="bg-primary-w text-ui-g1 input1 border-ui-g5 border px-3 py-3 rounded-sm w-full"/>
                         <div
                             class="text-signal-error input2"
-                            *ngIf="signUpForm.controls.firstName.invalid && (signUpForm.controls.firstName.dirty || signUpForm.controls.firstName.touched)"
+                            *ngIf="form.controls['firstName'].invalid && (form.controls['firstName'].dirty || form.controls['firstName'].touched)"
                         >
-                            <div *ngIf="signUpForm.controls.firstName.errors?.['required']">
+                            <div *ngIf="form.controls['firstName'].errors?.['required']">
                             First name is required.
                             </div>
-                            <div *ngIf="signUpForm.controls.firstName.errors?.['minlength']">
+                            <div *ngIf="form.controls['firstName'].errors?.['minlength']">
                             First name must be at least 5 characters long.
                             </div>
                         </div>
@@ -33,12 +33,12 @@
 
                         <div
                             class="text-signal-error input2 mb-4"
-                            *ngIf="signUpForm.controls.lastName.invalid && (signUpForm.controls.lastName.dirty || signUpForm.controls.lastName.touched)"
+                            *ngIf="form.controls['lastName'].invalid && (form.controls['lastName'].dirty || form.controls['lastName'].touched)"
                         >
-                            <div *ngIf="signUpForm.controls.lastName.errors?.['required']">
+                            <div *ngIf="form.controls['lastName'].errors?.['required']">
                             Last name is required.
                             </div>
-                            <div *ngIf="signUpForm.controls.lastName.errors?.['minlength']">
+                            <div *ngIf="form.controls['lastName'].errors?.['minlength']">
                             Last name must be at least 5 characters long.
                             </div>
                         </div>
@@ -50,12 +50,12 @@
 
                         <div
                             class="text-signal-error input2 mb-4"
-                            *ngIf="signUpForm.controls.birthday.invalid && (signUpForm.controls.birthday.dirty || signUpForm.controls.birthday.touched)"
+                            *ngIf="form.controls['birthday'].invalid && (form.controls['birthday'].dirty || form.controls['birthday'].touched)"
                         >
-                            <div *ngIf="signUpForm.controls.birthday.errors?.['required']">
+                            <div *ngIf="form.controls['birthday'].errors?.['required']">
                             Last name is required.
                             </div>
-                            <!-- <div *ngIf="signUpForm.controls.birthday.errors?.['minlength']">
+                            <!-- <div *ngIf="form.controls[birthday.errors?.['minlength']">
                             Last name must be at least 5 characters long.
                             </div> -->
                         </div>
@@ -78,34 +78,34 @@
             <div class="flex flex-row gap-10 px-4 py-[26px]">
                 <div class="flex-grow">
                     <div class="mb-4 flex-grow">
-                        <label for="instagram" class="text-ui-g1 input2 mb-1">Instagram</label>
+                        <label for="instagram" class="text-ui-g1 input2 mb-1">'instagram']</label>
                         <br>
                         <input id="instagram" type="text" formControlName="instagram" class="bg-primary-w text-ui-g1 input1 border-ui-g5 border px-3 py-3 rounded-sm w-full"/>
                         <div
                             class="text-signal-error input2"
-                            *ngIf="signUpForm.controls.instagram.invalid && (signUpForm.controls.instagram.dirty || signUpForm.controls.instagram.touched)"
+                            *ngIf="form.controls['instagram'].invalid && (form.controls['instagram'].dirty || form.controls['instagram'].touched)"
                         >
-                            <div *ngIf="signUpForm.controls.instagram.errors?.['required']">
+                            <div *ngIf="form.controls['instagram'].errors?.['required']">
                             First name is required.
                             </div>
-                            <div *ngIf="signUpForm.controls.instagram.errors?.['minlength']">
+                            <div *ngIf="form.controls['instagram'].errors?.['minlength']">
                             First name must be at least 5 characters long.
                             </div>
                         </div>
                     </div>
 
                     <div class="mb-4 flex-grow">
-                        <label for="tweeter" class="text-ui-g1 input2 mb-1">Tweeter</label><br>
+                        <label for="tweeter" class="text-ui-g1 input2 mb-1">'tweeter']</label><br>
                         <input id="tweeter" type="text" formControlName="tweeter" class="bg-primary-w text-ui-g1 input1 border-ui-g5 border px-3 py-3 rounded-sm w-full"/>
 
                         <div
                             class="text-signal-error input2 mb-4"
-                            *ngIf="signUpForm.controls.tweeter.invalid && (signUpForm.controls.tweeter.dirty || signUpForm.controls.tweeter.touched)"
+                            *ngIf="form.controls['tweeter'].invalid && (form.controls['tweeter'].dirty || form.controls['tweeter'].touched)"
                         >
-                            <div *ngIf="signUpForm.controls.tweeter.errors?.['required']">
+                            <div *ngIf="form.controls['tweeter'].errors?.['required']">
                             Last name is required.
                             </div>
-                            <div *ngIf="signUpForm.controls.tweeter.errors?.['minlength']">
+                            <div *ngIf="form.controls['tweeter'].errors?.['minlength']">
                             Last name must be at least 5 characters long.
                             </div>
                         </div>
@@ -113,40 +113,40 @@
                 </div>
                 <div class="flex-grow">
                     <div class="mb-4 flex-grow">
-                        <label for="email" class="text-ui-g1 input2 mb-1">Email</label><br>
+                        <label for="email" class="text-ui-g1 input2 mb-1">'email']</label><br>
                         <input id="email" type="text" formControlName="email" class="bg-primary-w text-ui-g1 input1 border-ui-g5 border px-3 py-3 rounded-sm w-full"/>
 
                         <div
                             class="text-signal-error input2 mb-4"
-                            *ngIf="signUpForm.controls.email.invalid && (signUpForm.controls.email.dirty || signUpForm.controls.email.touched)"
+                            *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)"
                         >
-                            <div *ngIf="signUpForm.controls.email.errors?.['required']">
+                            <div *ngIf="form.controls['email'].errors?.['required']">
                             Last name is required.
                             </div>
-                            <div *ngIf="signUpForm.controls.email.errors?.['minlength']">
+                            <div *ngIf="form.controls['email'].errors?.['minlength']">
                             Last name must be at least 5 characters long.
                             </div>
                         </div>
                     </div>
 
                     <div class="mb-4 flex-grow">
-                        <label for="facebook" class="text-ui-g1 input2 mb-1">Facebook</label><br>
+                        <label for="facebook" class="text-ui-g1 input2 mb-1">'facebook']</label><br>
                         <input id="facebook" type="text" formControlName="facebook" class="bg-primary-w text-ui-g1 input1 border-ui-g5 border px-3 py-3 rounded-sm w-full"/>
 
                         <div
                             class="text-signal-error input2 mb-4"
-                            *ngIf="signUpForm.controls.facebook.invalid && (signUpForm.controls.facebook.dirty || signUpForm.controls.facebook.touched)"
+                            *ngIf="form.controls['facebook'].invalid && (form.controls['facebook'].dirty || form.controls['facebook'].touched)"
                         >
-                            <div *ngIf="signUpForm.controls.facebook.errors?.['required']">
+                            <div *ngIf="form.controls['facebook'].errors?.['required']">
                             Last name is required.
                             </div>
-                            <div *ngIf="signUpForm.controls.facebook.errors?.['minlength']">
+                            <div *ngIf="form.controls['facebook'].errors?.['minlength']">
                             Last name must be at least 5 characters long.
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </section>

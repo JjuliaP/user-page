@@ -17,7 +17,6 @@ export class AppComponent {
   public isSidebarOpen = false;
 
   public setSidebarState(isSidebarOpen: boolean){
-    console.log(isSidebarOpen)
 this.isSidebarOpen = isSidebarOpen;
   }
 }

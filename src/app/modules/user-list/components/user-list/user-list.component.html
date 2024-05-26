@@ -11,8 +11,12 @@
             <app-button text='save'></app-button>
         </div>
     </div>
-    <div class="flex flex-row gap-4">
-        <app-roles-section class="flex-grow"></app-roles-section>
-        <app-form-section class="flex-grow"></app-form-section>
-    </div>
+    <form class="flex flex-row gap-4"(ngSubmit)="onFormSubmit()" [formGroup]="userDataForm">
+            <app-roles-section class="flex-grow" 
+            [permissionItems]="permissionItems" 
+            [form]='permissionsGroup'
+            [innerForm] = 'crudPermissionsGroup'
+            ></app-roles-section>
+            <!-- <app-form-section class="flex-grow" [form]='userInfoGroup'></app-form-section> -->
+        </form>
 </section>
