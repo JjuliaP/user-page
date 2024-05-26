@@ -1,0 +1,46 @@
+<div
+  class="chips-select input2 relative border border-ui-g5 py-[6px] px-3 flex flex-wrap items-center min-h-9 rounded-sm bg-primary-w">
+  <div
+    class="chips-select-container"
+    (click)="toggleDropdown($event)"
+    (keydown.enter)="toggleDropdown($event)"
+    aria-labelledby="select"
+    role="button"
+    tabindex="0">
+    <div class="chips relative w-full flex flex-wrap gap-[5px]">
+      <span
+        *ngFor="let option of selectedOptions"
+        class="chip flex items-center justify-between bg-ui-g6 rounded-sm input2 text-ui-g1 pl-2 gap-[6px]">
+        {{ option.name }}
+        <a
+          class="remove-chip"
+          (keydown.enter)="removeChip(option); $event.stopPropagation()"
+          (click)="removeChip(option); $event.stopPropagation()"
+          aria-labelledby="select"
+          role="button"
+          tabindex="0">
+          <img src="assets/icons/close-24.svg" alt="close" />
+        </a>
+      </span>
+      <input
+        #input
+        class="chips-select-input min-w-[25%] border-none outline-none flex-1"
+        readonly />
+    </div>
+  </div>
+  <div
+    tabindex="1"
+    class="dropdown absolute top-full left-0 w-full bg-primary-w border border-ui-g5 max-h-[200px] overflow-y-auto z-50"
+    *ngIf="dropdownOpen">
+    <div
+      #dropdownOption
+      *ngFor="let option of options"
+      tabindex="0"
+      class="dropdown-option cursor-pointer flex p-[10px] justify-between"
+      [class.selected]="isOptionSelected(option)"
+      (click)="selectOption(option)"
+      (keydown.enter)="selectOption(option)">
+      {{ option.name }}
+    </div>
+  </div>
+</div>

@@ -12,14 +12,15 @@
     </div>
   </div>
   <form
-    class="flex flex-row gap-4"
+    class="flex flex-row gap-4 justify-between"
     (ngSubmit)="onFormSubmit()"
     [formGroup]="userDataForm">
     <app-roles-section
-      class="flex-grow"
+      class="basis-1/2"
       [permissionItems]="permissionItems"
-      [form]="permissionsGroup"
-      [innerForm]="crudPermissionsGroup"></app-roles-section>
-    <!-- <app-form-section class="flex-grow" [form]='userInfoGroup'></app-form-section> -->
+      [form]="permissionsGroup"></app-roles-section>
+    <app-form-section
+      class="basis-1/2"
+      [form]="userInfoGroup"></app-form-section>
   </form>
 </section>

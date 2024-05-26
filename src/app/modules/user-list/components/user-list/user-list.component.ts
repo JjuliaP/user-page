@@ -6,12 +6,13 @@ import {
   FormBuilder,
 } from '@angular/forms';
 import { PermissionItem } from '../../../../interfaces/permission-items.interface';
+import { ChipOption } from '../../../../interfaces/chip-option.interface';
 
 type UserInfoFormFields = {
   firstName: string;
   lastName: string;
   birthday: string;
-  citizenship: string;
+  citizenship: Array<ChipOption>;
   files: string;
   instagram: string;
   email: string;
@@ -33,7 +34,7 @@ type PermissionForm = {
       delete: FormControl<boolean | null>;
     }>;
   }>;
-  role: FormControl<string | null>;
+  role: FormControl<Array<ChipOption> | null>;
 };
 
 @Component({
@@ -56,7 +57,7 @@ export class UserListComponent implements OnInit {
       Validators.minLength(5),
     ]),
     birthday: new FormControl('', [Validators.required]),
-    citizenship: new FormControl('', [Validators.required]),
+    citizenship: new FormControl<ChipOption[]>([], [Validators.required]),
     files: new FormControl('', [Validators.required]),
     instagram: new FormControl('', [
       Validators.required,
@@ -74,7 +75,7 @@ export class UserListComponent implements OnInit {
   });
   public permissionsGroup: FormGroup<PermissionForm> = new FormGroup({
     crudPermissions: new FormGroup({}),
-    role: new FormControl(''), // TODO fix type
+    role: new FormControl<ChipOption[]>([], [Validators.required]),
   });
   public crudPermissionsGroup: FormGroup = new FormGroup({});
   public permissionItems: PermissionItem[] = [
@@ -142,6 +143,7 @@ export class UserListComponent implements OnInit {
     );
 
     this.userDataForm.setControl('permissions', this.permissionsGroup);
+    this.userInfoGroup.valueChanges.subscribe(console.log);
   }
 
   public onFormSubmit() {}
