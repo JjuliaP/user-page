@@ -8,15 +8,15 @@ import { BadgeComponent } from './components/badge/badge.component';
 import { FormSectionComponent } from './components/form-section/form-section.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
-
 @NgModule({
-  declarations: [UserListComponent, ButtonComponent, FormSectionComponent, BadgeComponent, RolesSectionComponent],
-  imports: [
-    CommonModule,
-    UserListRoutingModule,
-    ReactiveFormsModule,
+  declarations: [
+    UserListComponent,
+    ButtonComponent,
+    FormSectionComponent,
+    BadgeComponent,
+    RolesSectionComponent,
   ],
-  exports:[ButtonComponent]
+  imports: [CommonModule, UserListRoutingModule, ReactiveFormsModule],
+  exports: [ButtonComponent],
 })
-export class UserListModule { }
+export class UserListModule {}

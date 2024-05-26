@@ -1,11 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormGroup,
   FormControl,
   Validators,
   FormBuilder,
-  FormArray,
-  AbstractControl,
 } from '@angular/forms';
 import { PermissionItem } from '../../../../interfaces/permission-items.interface';
 
@@ -26,23 +24,7 @@ type UserForm = {
   >;
 };
 
-type CrudFormFields = {
-  create: boolean;
-  read: boolean;
-  update: boolean;
-  delete: boolean;
-};
-
-type CrudForm = {
-  [field in keyof CrudFormFields]: FormControl<CrudFormFields[field] | null>;
-};
-
-type PermissionFormFields = {
-  role: string;
-  crudPermissions: any;
-};
 type PermissionForm = {
-  // [field in keyof PermissionFormFields]: FormControl<PermissionFormFields[field] | null>;
   role: FormControl<{
     [key: string]: FormGroup<{
       create: FormControl<boolean | null>;
@@ -59,7 +41,7 @@ type PermissionForm = {
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.scss',
 })
-export class UserListComponent {
+export class UserListComponent implements OnInit {
   public userDataForm: FormGroup = new FormGroup({
     permissions: new FormControl(null),
     userInfo: new FormControl(null),
@@ -145,7 +127,7 @@ export class UserListComponent {
   constructor(private fb: FormBuilder) {}
 
   public ngOnInit(): void {
-    this.permissionItems.forEach((item) => {
+    this.permissionItems.forEach(item => {
       const crudPermissionsControls = this.fb.group(item.permissions);
 
       this.crudPermissionsGroup.addControl(
@@ -159,7 +141,7 @@ export class UserListComponent {
       this.crudPermissionsGroup
     );
 
-    this.userDataForm.setControl('permissions', this.permissionsGroup)
+    this.userDataForm.setControl('permissions', this.permissionsGroup);
   }
 
   public onFormSubmit() {}

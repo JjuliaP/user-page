@@ -6,20 +6,20 @@ import { Component, EventEmitter, HostListener, Output } from '@angular/core';
   standalone: true,
   imports: [DatePipe, CommonModule],
   templateUrl: './menu.component.html',
-  styleUrl: './menu.component.scss'
+  styleUrl: './menu.component.scss',
 })
 export class MenuComponent {
   @Output() sidebarOpen = new EventEmitter<boolean>();
-  
+
   public isSidebarOpen = false;
   public selectedMenuItem = 'User List';
   public readonly date = new Date('2020-09-23');
   public menuItems = [
-    {name: 'User List'},
-    {name: 'User Edit'},
-    {name: 'Roles and Permissions'},
-    {name: 'Settings'}
-  ]
+    { name: 'User List' },
+    { name: 'User Edit' },
+    { name: 'Roles and Permissions' },
+    { name: 'Settings' },
+  ];
 
   screenMdWidth = parseFloat(
     getComputedStyle(document.body).getPropertyValue('--screen-md')
@@ -35,7 +35,7 @@ export class MenuComponent {
 
   public onToggleSidebarClick(): void {
     this.isSidebarOpen = !this.isSidebarOpen;
-    this.sidebarOpen.emit(this.isSidebarOpen)
+    this.sidebarOpen.emit(this.isSidebarOpen);
   }
 
   // public onMenuClick(): void {
@@ -43,6 +43,6 @@ export class MenuComponent {
   // }
 
   public onMenuItemClick(newValue: string): void {
-    this.selectedMenuItem = newValue; 
+    this.selectedMenuItem = newValue;
   }
 }

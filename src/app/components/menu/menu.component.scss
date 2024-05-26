@@ -1,4 +1,3 @@
-
 $nav-padding: 32px;
 $nav-btn-size: 24px;
 
@@ -55,13 +54,13 @@ $nav-btn-size: 24px;
           padding: 12px 0;
         }
       }
-      &.active { 
+      &.active {
         background-color: rgb(234, 234, 234);
       }
 
       &__title {
         grid-template-columns: $nav-padding min-content auto;
-        grid-template-areas: ". icon label";
+        grid-template-areas: '. icon label';
         color: #6e7075;
         align-items: center;
       }
@@ -88,5 +87,4 @@ $nav-btn-size: 24px;
     align-items: center;
     grid-column: 1/-1;
   }
-
 }

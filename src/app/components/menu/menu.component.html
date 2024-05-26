@@ -1,43 +1,55 @@
-
-<aside class="sidebar bg-primary-w border-r border-ui-g5" [ngClass]="{collapsed: !isSidebarOpen}">
-    <button
-      class="sidebar__toggle-btn w-6 h-6 mb-[50px]"
-      (click)="onToggleSidebarClick()"
-    >
-      <img src="../../../assets/icons/hamburger-24.svg" alt="Hamburger icon">
-    </button>
-    <div class="sidebar__date flex flex-col items-start gap-[3px] border-b border-secondary-bg-lighten90 mb-6 pb-4">
-      <span class="body2 text-ui-g4">{{isSidebarOpen ? (date | date:'cccc') : (date | date:'ccc')}}</span>
-      <h1 class="text-ui-g1">{{isSidebarOpen ? (date | date:'d LLLL') : (date | date:'d LL')}}</h1>
-      <span class="body2 text-ui-g4">{{isSidebarOpen ? (date | date:'yyyy') : (date | date:'yy')}}</span>
-    </div>
-    <nav class="sidebar__nav">
-      <ul class="sidebar__nav-items">
-        <li class="nav-item" >
-          <div class="nav-item__title items-center grid">
-            <span class="nav-item__icon w-10 h-10 flex items-center mr-3">
-              <img src="../../../assets/icons/raporty-40.svg" alt="Raporty icon">
-            </span>
-            <span class="nav-item__label body3 ">Statistics</span>
-          </div>
-        </li>
-        <li class="nav-item active">
-          <div class="nav-item__title items-center grid">
-            <span class="nav-item__icon w-10 h-10 flex items-center mr-3">
-              <img src="../../../assets/icons/odbiorcy-40.svg" alt="Odbiorcy icon">
-            </span>
-            <span class="nav-item__label display3 text-primary-b">Users</span>
-          </div>
-          <ul class="nav-item__subitems list-square text-ui-g3 body3" type="square">
-            <li 
-            [ngClass]="{'text-primary-b': selectedMenuItem === item.name, }" 
-            (click)="onMenuItemClick(item.name)" 
+<aside
+  class="sidebar bg-primary-w border-r border-ui-g5"
+  [ngClass]="{ collapsed: !isSidebarOpen }">
+  <button
+    class="sidebar__toggle-btn w-6 h-6 mb-[50px]"
+    (click)="onToggleSidebarClick()">
+    <img src="../../../assets/icons/hamburger-24.svg" alt="Hamburger icon" />
+  </button>
+  <div
+    class="sidebar__date flex flex-col items-start gap-[3px] border-b border-secondary-bg-lighten90 mb-6 pb-4">
+    <span class="body2 text-ui-g4">{{
+      isSidebarOpen ? (date | date: 'cccc') : (date | date: 'ccc')
+    }}</span>
+    <h1 class="text-ui-g1">
+      {{ isSidebarOpen ? (date | date: 'd LLLL') : (date | date: 'd LL') }}
+    </h1>
+    <span class="body2 text-ui-g4">{{
+      isSidebarOpen ? (date | date: 'yyyy') : (date | date: 'yy')
+    }}</span>
+  </div>
+  <nav class="sidebar__nav">
+    <ul class="sidebar__nav-items">
+      <li class="nav-item">
+        <div class="nav-item__title items-center grid">
+          <span class="nav-item__icon w-10 h-10 flex items-center mr-3">
+            <img
+              src="../../../assets/icons/raporty-40.svg"
+              alt="Raporty icon" />
+          </span>
+          <span class="nav-item__label body3">Statistics</span>
+        </div>
+      </li>
+      <li class="nav-item active">
+        <div class="nav-item__title items-center grid">
+          <span class="nav-item__icon w-10 h-10 flex items-center mr-3">
+            <img
+              src="../../../assets/icons/odbiorcy-40.svg"
+              alt="Odbiorcy icon" />
+          </span>
+          <span class="nav-item__label display3 text-primary-b">Users</span>
+        </div>
+        <ul
+          class="nav-item__subitems list-square text-ui-g3 body3"
+          type="square">
+          <li
+            [ngClass]="{ 'text-primary-b': selectedMenuItem === item.name }"
+            (click)="onMenuItemClick(item.name)"
             *ngFor="let item of menuItems">
-              {{ item.name }}
-           </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
+            {{ item.name }}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 </aside>
-

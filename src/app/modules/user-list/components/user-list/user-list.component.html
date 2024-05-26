@@ -1,22 +1,25 @@
 <section class="py-6 px-6 bg-ui-g7">
-    <div class="flex flex-row justify-between items-center mb-6">
-        <div>
-            <p class="ui-g3 body3">User / User Edit</p>
-            <h2 class="text-supporting-7">Hugh Jackman</h2>
-        </div>
-        <div class="flex flex-row gap-6">
-            <app-button color="signal-error" text="delete"></app-button>
-            <app-button color="primary-y" text="block"></app-button>
-            <app-button color="primary-bg" text="Set password"></app-button>
-            <app-button text='save'></app-button>
-        </div>
+  <div class="flex flex-row justify-between items-center mb-6">
+    <div>
+      <p class="ui-g3 body3">User / User Edit</p>
+      <h2 class="text-supporting-7">Hugh Jackman</h2>
     </div>
-    <form class="flex flex-row gap-4"(ngSubmit)="onFormSubmit()" [formGroup]="userDataForm">
-            <app-roles-section class="flex-grow" 
-            [permissionItems]="permissionItems" 
-            [form]='permissionsGroup'
-            [innerForm] = 'crudPermissionsGroup'
-            ></app-roles-section>
-            <!-- <app-form-section class="flex-grow" [form]='userInfoGroup'></app-form-section> -->
-        </form>
+    <div class="flex flex-row gap-6">
+      <app-button color="signal-error" text="delete"></app-button>
+      <app-button color="primary-y" text="block"></app-button>
+      <app-button color="primary-bg" text="Set password"></app-button>
+      <app-button text="save"></app-button>
+    </div>
+  </div>
+  <form
+    class="flex flex-row gap-4"
+    (ngSubmit)="onFormSubmit()"
+    [formGroup]="userDataForm">
+    <app-roles-section
+      class="flex-grow"
+      [permissionItems]="permissionItems"
+      [form]="permissionsGroup"
+      [innerForm]="crudPermissionsGroup"></app-roles-section>
+    <!-- <app-form-section class="flex-grow" [form]='userInfoGroup'></app-form-section> -->
+  </form>
 </section>
