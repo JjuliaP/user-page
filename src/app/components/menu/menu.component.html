@@ -52,6 +52,7 @@
           class="nav-item__subitems list-square text-ui-g3 body3"
           type="square">
           <li
+            class="hover-focus"
             [ngClass]="{ 'text-primary-b': selectedMenuItem === item.name }"
             (click)="onMenuItemClick(item.name)"
             (keypress)="onMenuItemClick(item.name)"

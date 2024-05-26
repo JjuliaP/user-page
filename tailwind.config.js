@@ -21,7 +21,6 @@ module.exports = {
         'ui-g5': 'var(--ui-g5)',
         'ui-g6': 'var(--ui-g6)',
         'ui-g7': 'var(--ui-g7)',
-        blue: 'var(--blue)',
       },
       fontFamily: {
         rubik: ['Rubik', 'sans-serif'],

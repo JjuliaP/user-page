@@ -32,8 +32,8 @@
         class="px-4 text-supporting-7 pt-6 pb-4 border-ui-g5 border-b mb-[10px]">
         Załączniki
       </h3>
-      <div class="flex flex-row gap-10 px-4 py-4">
-        <div class="gap-4 flex flex-col flex-grow">
+      <div class="flex flex-row gap-10 px-4 py-4 justify-between">
+        <div class="gap-4 flex flex-col basis-1/2">
           <div class="flex-grow">
             <label for="first-name" class="text-ui-g1 input2 mb-1">Name</label>
             <br />
@@ -93,41 +93,33 @@
               type="text"
               formControlName="birthday"
               class="bg-primary-w text-ui-g1 input1 border-ui-g5 border px-3 py-3 rounded-sm w-full" />
-
-            <div
-              class="text-signal-error input2 mb-4"
-              *ngIf="
-                form.controls['birthday'].invalid &&
-                (form.controls['birthday'].dirty ||
-                  form.controls['birthday'].touched)
-              ">
-              <div *ngIf="form.controls['birthday'].errors?.['required']">
-                Last name is required.
-              </div>
-              <!-- <div *ngIf="form.controls[birthday.errors?.['minlength']">
-                            Last name must be at least 5 characters long.
-                            </div> -->
-            </div>
           </div>
         </div>
-        <div class="flex-grow">
-          <div
-            class="border border-dashed border-ui-g5 px-6 py-5 flex justify-center items-center flex-col rounded-[4px] flex-grow">
-            <img
-              src="../../../../../assets/icons/spreadsheets-34.svg"
-              alt="file upload" />
-            <span class="display3 text-primary-b mb-1 mt-4"
-              >Drag and drop files
-            </span>
-            <span class="text-ui-g4 input2 text-center">
-              Drag and drop filesor select from your files
-            </span>
+        <div class="basis-1/2 flex gap-4 flex-col">
+          <div class="drag-n-drop">
+            <div
+              class="border border-dashed border-ui-g5 px-6 py-5 flex justify-center items-center flex-col rounded-[4px] flex-grow">
+              <img
+                src="../../../../../assets/icons/spreadsheets-34.svg"
+                alt="file upload" />
+              <span class="display3 text-primary-b mb-1 mt-4"
+                >Drag and drop files
+              </span>
+              <span class="text-ui-g4 input2 text-center">
+                Drag and drop filesor select from your files
+              </span>
+            </div>
           </div>
-          <input
-            type="file"
-            class="hidden"
-            (change)="onFileSelected($event)"
-            #fileInput />
+          <div>
+            <label for="citizenship" class="text-ui-g1 input2 mb-1"
+              >Citizenship</label
+            >
+            <br />
+            <app-chips-select
+              id="citizenship"
+              [options]="countryOptions"
+              formControlName="citizenship"></app-chips-select>
+          </div>
         </div>
       </div>
       <h3 class="px-4 text-supporting-7 pt-6 pb-4 border-ui-g5 border-b">
@@ -137,7 +129,7 @@
         <div class="flex-grow">
           <div class="mb-4 flex-grow">
             <label for="instagram" class="text-ui-g1 input2 mb-1"
-              >'instagram']</label
+              >Instagram</label
             >
             <br />
             <input
@@ -145,51 +137,21 @@
               type="text"
               formControlName="instagram"
               class="bg-primary-w text-ui-g1 input1 border-ui-g5 border px-3 py-3 rounded-sm w-full" />
-            <div
-              class="text-signal-error input2"
-              *ngIf="
-                form.controls['instagram'].invalid &&
-                (form.controls['instagram'].dirty ||
-                  form.controls['instagram'].touched)
-              ">
-              <div *ngIf="form.controls['instagram'].errors?.['required']">
-                First name is required.
-              </div>
-              <div *ngIf="form.controls['instagram'].errors?.['minlength']">
-                First name must be at least 5 characters long.
-              </div>
-            </div>
           </div>
 
           <div class="mb-4 flex-grow">
-            <label for="tweeter" class="text-ui-g1 input2 mb-1"
-              >'tweeter']</label
+            <label for="tweeter" class="text-ui-g1 input2 mb-1">Tweeter</label
             ><br />
             <input
               id="tweeter"
               type="text"
               formControlName="tweeter"
               class="bg-primary-w text-ui-g1 input1 border-ui-g5 border px-3 py-3 rounded-sm w-full" />
-
-            <div
-              class="text-signal-error input2 mb-4"
-              *ngIf="
-                form.controls['tweeter'].invalid &&
-                (form.controls['tweeter'].dirty ||
-                  form.controls['tweeter'].touched)
-              ">
-              <div *ngIf="form.controls['tweeter'].errors?.['required']">
-                Last name is required.
-              </div>
-              <div *ngIf="form.controls['tweeter'].errors?.['minlength']">
-                Last name must be at least 5 characters long.
-              </div>
-            </div>
           </div>
         </div>
         <div class="flex-grow">
           <div class="mb-4 flex-grow">
-            <label for="email" class="text-ui-g1 input2 mb-1">'email']</label
+            <label for="email" class="text-ui-g1 input2 mb-1">Email</label
             ><br />
             <input
               id="email"
@@ -204,38 +166,22 @@
                 (form.controls['email'].dirty || form.controls['email'].touched)
               ">
               <div *ngIf="form.controls['email'].errors?.['required']">
-                Last name is required.
+                Email is required.
               </div>
               <div *ngIf="form.controls['email'].errors?.['minlength']">
-                Last name must be at least 5 characters long.
+                Email must be at least 5 characters long.
               </div>
             </div>
           </div>
 
           <div class="mb-4 flex-grow">
-            <label for="facebook" class="text-ui-g1 input2 mb-1"
-              >'facebook']</label
+            <label for="facebook" class="text-ui-g1 input2 mb-1">Facebook</label
             ><br />
             <input
               id="facebook"
               type="text"
               formControlName="facebook"
               class="bg-primary-w text-ui-g1 input1 border-ui-g5 border px-3 py-3 rounded-sm w-full" />
-
-            <div
-              class="text-signal-error input2 mb-4"
-              *ngIf="
-                form.controls['facebook'].invalid &&
-                (form.controls['facebook'].dirty ||
-                  form.controls['facebook'].touched)
-              ">
-              <div *ngIf="form.controls['facebook'].errors?.['required']">
-                Last name is required.
-              </div>
-              <div *ngIf="form.controls['facebook'].errors?.['minlength']">
-                Last name must be at least 5 characters long.
-              </div>
-            </div>
           </div>
         </div>
       </div>
