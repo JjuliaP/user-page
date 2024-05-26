@@ -1,52 +1,23 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-section',
   templateUrl: './form-section.component.html',
-  styleUrl: './form-section.component.scss'
+  styleUrl: './form-section.component.scss',
 })
 export class FormSectionComponent {
+  @Input() form!: FormGroup;
   public tab = 1;
-  signUpForm = new FormGroup({
-    firstName: new FormControl("", [
-      Validators.required,
-      Validators.minLength(5)
-    ]),
-    lastName: new FormControl("", [
-      Validators.required,
-      Validators.minLength(5)
-    ]),
-    birthday: new FormControl("", [
-      Validators.required,
-    ]),
-    citizenship: new FormControl("", [Validators.required]),
-    files: new FormControl("", [Validators.required]),
-    instagram: new FormControl("", [
-      Validators.required,
-      Validators.minLength(5)
-    ]),
-    email: new FormControl("", [
-      Validators.required,
-      Validators.minLength(5)
-    ]),
-    tweeter: new FormControl("", [
-      Validators.required,
-      Validators.minLength(5)
-    ]),
-    facebook: new FormControl("", [
-      Validators.required,
-      Validators.minLength(5)
-    ]),
-  });
 
-  public clickTab(tabNumber: number): void{
+  // get formControls(): { [key: string]: AbstractControl; }
+  // {
+  //     return this.form.controls;
+  // }
+
+  public clickTab(tabNumber: number): void {
     this.tab = tabNumber;
   }
 
-  public onFormSubmit(){}
-
-  public onFileSelected(event: Event){
-
-  }
+  public onFileSelected(event: Event) {}
 }
