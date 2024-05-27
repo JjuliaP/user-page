@@ -1,0 +1,125 @@
+{
+  "configVersion": 1,
+  "timestamp": 1716828636991,
+  "index": "/user-page/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/user-page/chunk-25TI6QV3.js",
+        "/user-page/chunk-3VU6LT5V.js",
+        "/user-page/chunk-7XCVBO5U.js",
+        "/user-page/chunk-FJHEWL5D.js",
+        "/user-page/chunk-FZWC3CU2.js",
+        "/user-page/chunk-Z3GPI3YO.js",
+        "/user-page/favicon.ico",
+        "/user-page/index.html",
+        "/user-page/main-FHPGI5A4.js",
+        "/user-page/manifest.webmanifest",
+        "/user-page/polyfills-A7MJM4D4.js",
+        "/user-page/styles-45TP6ODJ.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/user-page/assets/fonts/Rubik-Italic-VariableFont_wght.ttf",
+        "/user-page/assets/fonts/Rubik-VariableFont_wght.ttf",
+        "/user-page/assets/icons/avatar.svg",
+        "/user-page/assets/icons/bellcounter-40.svg",
+        "/user-page/assets/icons/calendar-25.svg",
+        "/user-page/assets/icons/close-24.svg",
+        "/user-page/assets/icons/error-60.svg",
+        "/user-page/assets/icons/hamburger-24.svg",
+        "/user-page/assets/icons/hamburger-close-24.svg",
+        "/user-page/assets/icons/odbiorcy-40.svg",
+        "/user-page/assets/icons/raporty-40.svg",
+        "/user-page/assets/icons/spreadsheets-34.svg",
+        "/user-page/assets/icons/triangle-down.svg",
+        "/user-page/assets/manifest/icon-128x128.png",
+        "/user-page/assets/manifest/icon-144x144.png",
+        "/user-page/assets/manifest/icon-152x152.png",
+        "/user-page/assets/manifest/icon-192x192.png",
+        "/user-page/assets/manifest/icon-256x256.png",
+        "/user-page/assets/manifest/icon-72x72.png",
+        "/user-page/assets/manifest/icon-96x96.png",
+        "/user-page/assets/styles/color-variables.scss",
+        "/user-page/assets/styles/screen-width-variables.scss",
+        "/user-page/media/Rubik-Italic-VariableFont_wght-RRSV4KP2.ttf",
+        "/user-page/media/Rubik-VariableFont_wght-T7F3THR3.ttf",
+        "/user-page/media/calendar-25-LF6TFQKS.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/user-page/assets/fonts/Rubik-Italic-VariableFont_wght.ttf": "90ca1b88e059422427a59b46d52877d66d6fdc81",
+    "/user-page/assets/fonts/Rubik-VariableFont_wght.ttf": "80fbecd6d6cb21096b3e0277222e696c77ceb7eb",
+    "/user-page/assets/icons/avatar.svg": "fadea2e94e7131339d75eb2b74cb2bdd4294c7d3",
+    "/user-page/assets/icons/bellcounter-40.svg": "a4110a9c706bf6ce8b0d6eff3a78aabbd2d5b26f",
+    "/user-page/assets/icons/calendar-25.svg": "addd6c94b938d3554022ef23a8986f41a4755d5f",
+    "/user-page/assets/icons/close-24.svg": "eda90ef2998a3d91aa3cce3c80795b234affe68c",
+    "/user-page/assets/icons/error-60.svg": "265cd9fb6f56b6e2e2b27e6c6a845893f69ca7c8",
+    "/user-page/assets/icons/hamburger-24.svg": "a48d98ccf0a519a267f66415e068b2efb90a2b7a",
+    "/user-page/assets/icons/hamburger-close-24.svg": "165990425f0a1b87c966092bfe774936732a8cdf",
+    "/user-page/assets/icons/odbiorcy-40.svg": "d4a1f9fd22b34df592aab68486247a1589072cef",
+    "/user-page/assets/icons/raporty-40.svg": "df12889f7fb67e877b9ee6ab36da707bdf3e245f",
+    "/user-page/assets/icons/spreadsheets-34.svg": "17076952d9f93b5e9314637ce79351d76624e8c5",
+    "/user-page/assets/icons/triangle-down.svg": "a5baaf913cc976328b51e26963874a27df88dab3",
+    "/user-page/assets/manifest/icon-128x128.png": "8731bf1bd51896cb734bac1e941c5dbfb735097a",
+    "/user-page/assets/manifest/icon-144x144.png": "bffe55c5eb0de623ed06585628b86243a4c228a0",
+    "/user-page/assets/manifest/icon-152x152.png": "160c7ca22b4d02700fa9ea32890ea2fa04536ed6",
+    "/user-page/assets/manifest/icon-192x192.png": "5a69387d0490189e889947bd674e787936220bd1",
+    "/user-page/assets/manifest/icon-256x256.png": "345393e5f5e6312b34d97301cd4b614478d10432",
+    "/user-page/assets/manifest/icon-72x72.png": "0a1635bdc4a4b8360257b672d9800258ab9f855d",
+    "/user-page/assets/manifest/icon-96x96.png": "e766d17559f54866f80f5752ff672612a1f745f5",
+    "/user-page/assets/styles/color-variables.scss": "3c0c02116b98c92a6e90191f5ac8a3959faa68e2",
+    "/user-page/assets/styles/screen-width-variables.scss": "21b02035d68f8473348e20bb836adf941f51407e",
+    "/user-page/chunk-25TI6QV3.js": "4a7c169f756e2c63219886710801c72ca4b1648b",
+    "/user-page/chunk-3VU6LT5V.js": "2210338322329b29606f8875f070dd27c998c809",
+    "/user-page/chunk-7XCVBO5U.js": "5479cdc98815838eae9e08117a579b0821542cc7",
+    "/user-page/chunk-FJHEWL5D.js": "b47286d296e6725516b3415f29fae9a87f38455e",
+    "/user-page/chunk-FZWC3CU2.js": "198208f6abb0682bb5b16ea63e61340ec8e09b70",
+    "/user-page/chunk-Z3GPI3YO.js": "3872ed0a7300ed78468bb85d7d60ed7c16318cd5",
+    "/user-page/favicon.ico": "0a1635bdc4a4b8360257b672d9800258ab9f855d",
+    "/user-page/index.html": "2d9a13035bc744ffcbf977134a28e1d306ff17ba",
+    "/user-page/main-FHPGI5A4.js": "52d7d593e970d213ddd1a67c3952c9e47ed04343",
+    "/user-page/manifest.webmanifest": "ac9ed96bae4033b5f9c3f4daf4d78a5e1170a8c8",
+    "/user-page/media/Rubik-Italic-VariableFont_wght-RRSV4KP2.ttf": "90ca1b88e059422427a59b46d52877d66d6fdc81",
+    "/user-page/media/Rubik-VariableFont_wght-T7F3THR3.ttf": "80fbecd6d6cb21096b3e0277222e696c77ceb7eb",
+    "/user-page/media/calendar-25-LF6TFQKS.svg": "addd6c94b938d3554022ef23a8986f41a4755d5f",
+    "/user-page/polyfills-A7MJM4D4.js": "547053781d5952561abe68a51cc6c1a2b1b51c55",
+    "/user-page/styles-45TP6ODJ.css": "88a714a6fad9d4798f1dae3ad8e79441206ad253"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
