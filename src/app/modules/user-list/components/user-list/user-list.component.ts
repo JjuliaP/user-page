@@ -60,6 +60,10 @@ type PermissionForm = {
   ],
 })
 export class UserListComponent implements OnInit {
+  private readonly nameValidationString = '[a-zA-Z ]*';
+  private readonly emailValidationString =
+    '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
+
   public userDataForm: FormGroup = new FormGroup({
     permissions: new FormControl(null),
     userInfo: new FormControl(null),
@@ -68,16 +72,22 @@ export class UserListComponent implements OnInit {
     firstName: new FormControl('', [
       Validators.required,
       Validators.minLength(2),
+      Validators.pattern(this.nameValidationString),
     ]),
     lastName: new FormControl('', [
       Validators.required,
       Validators.minLength(2),
+      Validators.pattern(this.nameValidationString),
     ]),
     birthday: new FormControl('', [Validators.required]),
     citizenship: new FormControl<ChipOption[]>([]),
     files: new FormControl<File[]>([]),
     instagram: new FormControl(''),
-    email: new FormControl(''),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5),
+      Validators.pattern(this.emailValidationString),
+    ]),
     tweeter: new FormControl(''),
     facebook: new FormControl(''),
   });
@@ -155,7 +165,6 @@ export class UserListComponent implements OnInit {
 
     this.userDataForm.setControl('permissions', this.permissionsGroup);
     this.userDataForm.setControl('userInfo', this.userInfoGroup);
-    this.userInfoGroup.valueChanges.subscribe(console.log);
   }
 
   public onFormSubmit(): void {

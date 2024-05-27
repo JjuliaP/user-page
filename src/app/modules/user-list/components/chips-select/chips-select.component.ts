@@ -38,7 +38,6 @@ export class ChipsSelectComponent implements ControlValueAccessor {
     if (optionIndex > -1) {
       this.selectedOptions.splice(optionIndex, 1);
     } else {
-      console.log(option);
       this.selectedOptions.push(option);
     }
 
