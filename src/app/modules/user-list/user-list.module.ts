@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserListRoutingModule } from './user-list-routing.module';
@@ -20,7 +21,12 @@ import { FileInputComponent } from './components/file-input/file-input.component
     ChipsSelectComponent,
     FileInputComponent,
   ],
-  imports: [CommonModule, UserListRoutingModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    UserListRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   exports: [ButtonComponent],
 })
 export class UserListModule {}

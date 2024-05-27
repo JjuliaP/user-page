@@ -7,13 +7,14 @@ import {
 } from '@angular/forms';
 import { PermissionItem } from '../../../../interfaces/permission-items.interface';
 import { ChipOption } from '../../../../interfaces/chip-option.interface';
+import { UserListApiService } from '../../services/user-list-api.service';
 
 type UserInfoFormFields = {
   firstName: string;
   lastName: string;
   birthday: string;
   citizenship: Array<ChipOption>;
-  files: Array<string>;
+  files: Array<File>;
   instagram: string;
   email: string;
   tweeter: string;
@@ -41,6 +42,7 @@ type PermissionForm = {
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.scss',
+  providers: [UserListApiService],
 })
 export class UserListComponent implements OnInit {
   public userDataForm: FormGroup = new FormGroup({
@@ -58,7 +60,7 @@ export class UserListComponent implements OnInit {
     ]),
     birthday: new FormControl('', [Validators.required]),
     citizenship: new FormControl<ChipOption[]>([]),
-    files: new FormControl<string[]>([]),
+    files: new FormControl<File[]>([]),
     instagram: new FormControl(''),
     email: new FormControl(''),
     tweeter: new FormControl(''),
@@ -116,7 +118,10 @@ export class UserListComponent implements OnInit {
       },
     },
   ];
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private userListApiService: UserListApiService
+  ) {}
 
   public ngOnInit(): void {
     this.permissionItems.forEach(item => {
@@ -138,7 +143,44 @@ export class UserListComponent implements OnInit {
     this.userInfoGroup.valueChanges.subscribe(console.log);
   }
 
-  public onFormSubmit() {}
+  public onFormSubmit(): void {
+    this.userDataForm.markAllAsTouched();
+
+    if (this.userDataForm.valid) {
+      this.userListApiService.sendRequest(this.createRequestBody()).subscribe();
+    }
+  }
 
   public onBlockClick() {}
+
+  private createRequestBody(): FormData {
+    return this.convertObjectToFormData(this.userDataForm.value);
+  }
+
+  private convertObjectToFormData(
+    obj: any,
+    form = new FormData(),
+    namespace = ''
+  ): FormData {
+    for (const property in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, property)) {
+        const formKey = namespace ? `${namespace}[${property}]` : property;
+
+        if (obj[property] instanceof File) {
+          // If the property is a file
+          form.append(formKey, obj[property]);
+        } else if (
+          typeof obj[property] === 'object' &&
+          !(obj[property] instanceof Date)
+        ) {
+          // If the property is an object, but not a Date, recursively convert it
+          this.convertObjectToFormData(obj[property], form, formKey);
+        } else {
+          // If the property is a scalar (string, number, boolean, or Date)
+          form.append(formKey, obj[property]);
+        }
+      }
+    }
+    return form;
+  }
 }
