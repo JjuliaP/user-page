@@ -8,7 +8,6 @@ import { CommonModule } from '@angular/common';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, CommonModule, MenuComponent, HeaderComponent],
-  providers: [],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

@@ -1,11 +1,14 @@
 import { Component, ElementRef, Input, ViewChild, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { ChipOption } from '../../../../interfaces/chip-option.interface';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-chips-select',
   templateUrl: './chips-select.component.html',
   styleUrls: ['./chips-select.component.scss'],
+  standalone: true,
+  imports: [CommonModule],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

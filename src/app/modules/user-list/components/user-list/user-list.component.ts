@@ -4,10 +4,16 @@ import {
   FormControl,
   Validators,
   FormBuilder,
+  ReactiveFormsModule,
 } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { PermissionItem } from '../../../../interfaces/permission-items.interface';
 import { ChipOption } from '../../../../interfaces/chip-option.interface';
 import { UserListApiService } from '../../services/user-list-api.service';
+import { UserListRoutingModule } from '../../user-list-routing.module';
+import { ButtonComponent } from '../button/button.component';
+import { RolesSectionComponent } from '../roles-section/roles-section.component';
+import { FormSectionComponent } from '../form-section/form-section.component';
 
 type UserInfoFormFields = {
   firstName: string;
@@ -43,6 +49,15 @@ type PermissionForm = {
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.scss',
   providers: [UserListApiService],
+  standalone: true,
+  imports: [
+    CommonModule,
+    UserListRoutingModule,
+    ReactiveFormsModule,
+    ButtonComponent,
+    RolesSectionComponent,
+    FormSectionComponent,
+  ],
 })
 export class UserListComponent implements OnInit {
   public userDataForm: FormGroup = new FormGroup({
@@ -147,7 +162,11 @@ export class UserListComponent implements OnInit {
     this.userDataForm.markAllAsTouched();
 
     if (this.userDataForm.valid) {
-      this.userListApiService.sendRequest(this.createRequestBody()).subscribe();
+      this.userListApiService
+        .sendRequest(this.createRequestBody())
+        .subscribe(response =>
+          console.warn('Response:', [...(response as any).entries()])
+        );
     }
   }
 

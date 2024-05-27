@@ -4,10 +4,10 @@ export const routes: Routes = [
   { path: '', redirectTo: '/user-list', pathMatch: 'full' },
   {
     path: 'user-list',
-    loadChildren: () =>
-      import('./modules/user-list/user-list.module').then(
-        m => m.UserListModule
-      ),
+    loadComponent: () =>
+      import(
+        './modules/user-list/components/user-list/user-list.component'
+      ).then(m => m.UserListComponent),
   },
   {
     path: 'user-edit',

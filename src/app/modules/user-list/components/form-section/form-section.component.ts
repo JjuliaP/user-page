@@ -1,11 +1,21 @@
 import { Component, Input } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ChipOption } from '../../../../interfaces/chip-option.interface';
+import { CommonModule } from '@angular/common';
+import { ChipsSelectComponent } from '../chips-select/chips-select.component';
+import { FileInputComponent } from '../file-input/file-input.component';
 
 @Component({
   selector: 'app-form-section',
   templateUrl: './form-section.component.html',
   styleUrl: './form-section.component.scss',
+  standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    ChipsSelectComponent,
+    FileInputComponent,
+  ],
 })
 export class FormSectionComponent {
   @Input() form!: FormGroup;
