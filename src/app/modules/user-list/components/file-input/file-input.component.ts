@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, HostListener, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
@@ -5,6 +6,8 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
   selector: 'app-file-input',
   templateUrl: './file-input.component.html',
   styleUrl: './file-input.component.scss',
+  standalone: true,
+  imports: [CommonModule],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

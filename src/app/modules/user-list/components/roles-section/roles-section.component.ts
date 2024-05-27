@@ -1,12 +1,26 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AbstractControl, FormGroup } from '@angular/forms';
+import {
+  AbstractControl,
+  FormGroup,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { PermissionItem } from '../../../../interfaces/permission-items.interface';
 import { ChipOption } from '../../../../interfaces/chip-option.interface';
+import { CommonModule } from '@angular/common';
+import { ChipsSelectComponent } from '../chips-select/chips-select.component';
+import { BadgeComponent } from '../badge/badge.component';
 
 @Component({
   selector: 'app-roles-section',
   templateUrl: './roles-section.component.html',
   styleUrl: './roles-section.component.scss',
+  standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    ChipsSelectComponent,
+    BadgeComponent,
+  ],
 })
 export class RolesSectionComponent implements OnInit {
   @Input() form!: FormGroup;

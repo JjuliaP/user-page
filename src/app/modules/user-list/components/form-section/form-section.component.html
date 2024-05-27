@@ -35,7 +35,10 @@
       <div class="flex flex-row gap-10 px-4 py-4 justify-between">
         <div class="gap-4 flex flex-col basis-1/2">
           <div class="flex-grow">
-            <label for="first-name" class="text-ui-g1 input2 mb-1">Name</label>
+            <label for="first-name" class="text-ui-g1 input2 mb-1"
+              >Name
+              <sup class="text-supporting-3">*</sup>
+            </label>
             <br />
             <input
               id="first-name"
@@ -55,12 +58,15 @@
               <div *ngIf="form.controls['firstName'].errors?.['minlength']">
                 First name must be at least 2 characters long.
               </div>
+              <div *ngIf="form.controls['firstName'].errors?.['pattern']">
+                First name must be valid.
+              </div>
             </div>
           </div>
 
           <div class="flex-grow">
             <label for="last-name" class="text-ui-g1 input2 mb-1"
-              >Last Name</label
+              >Last Name <sup class="text-supporting-3">*</sup></label
             ><br />
             <input
               id="last-name"
@@ -86,7 +92,7 @@
 
           <div class="flex-grow">
             <label for="birthday" class="text-ui-g1 input2 mb-1"
-              >Birth date</label
+              >Birth date<sup class="text-supporting-3">*</sup></label
             ><br />
             <input
               placeholder=" 1"
@@ -151,7 +157,8 @@
         </div>
         <div class="flex-grow">
           <div class="mb-4 flex-grow">
-            <label for="email" class="text-ui-g1 input2 mb-1">Email</label
+            <label for="email" class="text-ui-g1 input2 mb-1"
+              >Email<sup class="text-supporting-3">*</sup></label
             ><br />
             <input
               id="email"
@@ -170,6 +177,9 @@
               </div>
               <div *ngIf="form.controls['email'].errors?.['minlength']">
                 Email must be at least 5 characters long.
+              </div>
+              <div *ngIf="form.controls['email'].errors?.['pattern']">
+                Email must be valid.
               </div>
             </div>
           </div>
