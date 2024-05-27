@@ -1,16 +1,6 @@
 $nav-padding: 32px;
 $nav-btn-size: 24px;
 
-@mixin font-regular {
-  font-size: 14px;
-  line-height: 17px;
-}
-
-@mixin font-xl {
-  font-size: 26px;
-  line-height: 31px;
-}
-
 :host {
   grid-area: aside;
 }
