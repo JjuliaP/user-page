@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { ChipOption } from '../../../../interfaces/chip-option.interface';
 import { CommonModule } from '@angular/common';

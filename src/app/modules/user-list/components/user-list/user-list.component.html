@@ -9,7 +9,7 @@
       <app-button
         color="primary-y"
         text="block"
-        (buttonClickEvent)="onBlockClick()"></app-button>
+        (buttonClickEvent)="openModal()"></app-button>
       <app-button color="primary-bg" text="Set password"></app-button>
       <app-button text="save" (buttonClickEvent)="onFormSubmit()"></app-button>
     </div>
@@ -27,3 +27,21 @@
       [form]="userInfoGroup"></app-form-section>
   </form>
 </section>
+
+<app-modal>
+  <div main class="pb-10 gap-4 flex items-center flex-col">
+    <img
+      class="text-[40px]"
+      src="../../../../../../assets/icons/error-60.svg"
+      alt="Error icon" />
+    <h2>Block content</h2>
+    <p class="body2 text-center">Are you sure?</p>
+  </div>
+  <div footer class="gap-7 flex justify-center">
+    <app-button text="Yes" (click)="onConfirmClick()"></app-button>
+    <app-button
+      color="primary-bg"
+      text="No"
+      (click)="onCancelClick()"></app-button>
+  </div>
+</app-modal>
