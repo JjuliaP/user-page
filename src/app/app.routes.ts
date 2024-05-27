@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/user-list', pathMatch: 'full' },
@@ -23,5 +24,5 @@ export const routes: Routes = [
         m => m.RolesPermissionsModule
       ),
   },
-  // { path: '**', component: PageNotFoundComponent }
+  { path: '**', component: PageNotFoundComponent }
 ];
