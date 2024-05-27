@@ -55,10 +55,9 @@
             *ngFor="let item of menuItems; let i = index"
             [attr.aria-labelledby]="item.name"
             [attr.tabindex]="i"
-            role="button">
-            <a routerLink="{{ item.link }}">
-              {{ item.name }}
-            </a>
+            role="button"
+            routerLink="{{ item.link }}">
+            {{ item.name }}
           </li>
         </ul>
       </li>
