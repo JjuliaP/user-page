@@ -3,8 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('./assets/styles/color-variable.scss');
-@import url('./assets/styles/screen-width-variable.scss');
+@import url('./assets/styles/color-variables.scss');
+@import url('./assets/styles/screen-width-variables.scss');
 
 @layer base {
   @font-face {

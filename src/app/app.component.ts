@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'angular-webchefs';
+  public title = 'User Page';
   public isSidebarOpen = false;
 
   public setSidebarState(isSidebarOpen: boolean): void {

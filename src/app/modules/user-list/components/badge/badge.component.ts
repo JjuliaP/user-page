@@ -5,7 +5,6 @@ import { AbstractControl } from '@angular/forms';
 @Component({
   selector: 'app-badge',
   templateUrl: './badge.component.html',
-  styleUrl: './badge.component.scss',
   standalone: true,
   imports: [CommonModule],
 })

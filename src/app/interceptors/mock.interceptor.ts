@@ -5,8 +5,7 @@ import {
   HttpResponse,
 } from '@angular/common/http';
 import { of } from 'rxjs';
-
-export const MockHeader = 'Mock-Header';
+import { MockHeader } from '../constants/interceptor.constants';
 
 export const MockInterceptor: HttpInterceptorFn = (
   req: HttpRequest<unknown>,
