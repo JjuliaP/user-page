@@ -30,7 +30,13 @@
       <li class="nav-item">
         <div class="nav-item__title items-center grid">
           <span class="nav-item__icon w-10 h-10 flex items-center">
-            <img src="assets/icons/raporty-40.svg" alt="Raporty icon" />
+            <img
+              src="assets/icons/raporty-40.svg"
+              alt="Raporty icon"
+              (click)="onToggleSidebarClick()"
+              (keypress)="onToggleSidebarClick()"
+              role="button"
+              tabindex="0" />
           </span>
           <span class="nav-item__label body3 ml-3">Statistics</span>
         </div>
@@ -38,7 +44,13 @@
       <li class="nav-item active">
         <div class="nav-item__title items-center grid">
           <span class="nav-item__icon w-10 h-10 flex items-center">
-            <img src="assets/icons/odbiorcy-40.svg" alt="Odbiorcy icon" />
+            <img
+              src="assets/icons/odbiorcy-40.svg"
+              alt="Odbiorcy icon"
+              (click)="onToggleSidebarClick()"
+              (keypress)="onToggleSidebarClick()"
+              role="button"
+              tabindex="1" />
           </span>
           <span class="nav-item__label display3 text-primary-b ml-3"
             >Users</span
@@ -48,7 +60,7 @@
           class="nav-item__subitems list-square text-ui-g3 body3"
           type="square">
           <li
-            class="hover-focus"
+            class="hover-focus focus:shadow-none"
             [ngClass]="{ 'text-primary-b': selectedMenuItem === item.name }"
             (click)="onMenuItemClick(item.name)"
             (keypress)="onMenuItemClick(item.name)"

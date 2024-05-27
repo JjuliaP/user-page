@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
 export class MenuComponent {
   @Output() sidebarOpen = new EventEmitter<boolean>();
 
-  public isSidebarOpen = false;
+  public isSidebarOpen = true;
   public selectedMenuItem = 'User List';
   public readonly date = new Date('2020-09-23');
   public menuItems = [
@@ -22,7 +22,7 @@ export class MenuComponent {
     { name: 'Settings', link: 'settings' },
   ];
 
-  screenMdWidth = parseFloat(
+  private screenMdWidth = parseFloat(
     getComputedStyle(document.body).getPropertyValue('--screen-md')
   );
 

@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   public title = 'User Page';
-  public isSidebarOpen = false;
+  public isSidebarOpen = true;
 
   public setSidebarState(isSidebarOpen: boolean): void {
     this.isSidebarOpen = isSidebarOpen;

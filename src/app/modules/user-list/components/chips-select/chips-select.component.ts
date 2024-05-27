@@ -1,4 +1,10 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  Input,
+  ViewChild,
+} from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { ChipOption } from '../../../../interfaces/chip-option.interface';
 import { CommonModule } from '@angular/common';
@@ -21,6 +27,10 @@ export class ChipsSelectComponent implements ControlValueAccessor {
   @Input({ required: true }) options: ChipOption[] = [];
   @ViewChild('input') input!: ElementRef<HTMLInputElement>;
   @ViewChild('dropdownOption') dropdownOption!: ElementRef<HTMLDivElement>;
+
+  @HostListener('document:click', ['$event']) onDocumentClick() {
+    this.dropdownOpen = false;
+  }
 
   public selectedOptions: ChipOption[] = [];
   public dropdownOpen: boolean = false;
