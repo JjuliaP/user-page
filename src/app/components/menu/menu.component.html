@@ -60,7 +60,9 @@
             [attr.aria-labelledby]="item.name"
             [attr.tabindex]="i"
             role="button">
-            {{ item.name }}
+            <a routerLink="{{ item.link }}">
+              {{ item.name }}
+            </a>
           </li>
         </ul>
       </li>
