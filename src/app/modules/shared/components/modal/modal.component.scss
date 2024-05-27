@@ -1,0 +1,17 @@
+.modal-wrapper {
+  box-shadow: 0px 4px 10px 0px #00000024;
+  overflow: hidden;
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .header {
+    .btn-close {
+      &:not(:has(+ *)) {
+        margin-right: 0px;
+        margin-left: auto;
+      }
+    }
+  }
+}

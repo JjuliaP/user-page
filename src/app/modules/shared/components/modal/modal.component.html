@@ -1,0 +1,21 @@
+<dialog
+  #dialog
+  class="modal-wrapper border-none rounded-[10px] p-6 min-w-[400px] max-w-[600px]">
+  <header class="header flex justify-between h-[30px]">
+    <ng-content select="[header]"></ng-content>
+    <button class="btn-close" (click)="close()">
+      <img
+        class="confirm-modal__icon"
+        src="../../../../../../assets/icons/close-24.svg"
+        alt="Error icon" />
+    </button>
+  </header>
+
+  <main class="min-h-36 max-h-[400px]">
+    <ng-content select="[main]"> </ng-content>
+  </main>
+
+  <footer class="h-[30px]">
+    <ng-content select="[footer]"></ng-content>
+  </footer>
+</dialog>

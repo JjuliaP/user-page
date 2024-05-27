@@ -15,7 +15,7 @@ export class AppComponent {
   title = 'angular-webchefs';
   public isSidebarOpen = false;
 
-  public setSidebarState(isSidebarOpen: boolean) {
+  public setSidebarState(isSidebarOpen: boolean): void {
     this.isSidebarOpen = isSidebarOpen;
   }
 }

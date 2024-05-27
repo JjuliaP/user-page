@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
   FormGroup,
   FormControl,
@@ -11,9 +11,10 @@ import { PermissionItem } from '../../../../interfaces/permission-items.interfac
 import { ChipOption } from '../../../../interfaces/chip-option.interface';
 import { UserListApiService } from '../../services/user-list-api.service';
 import { UserListRoutingModule } from '../../user-list-routing.module';
-import { ButtonComponent } from '../button/button.component';
 import { RolesSectionComponent } from '../roles-section/roles-section.component';
 import { FormSectionComponent } from '../form-section/form-section.component';
+import { ModalComponent } from '../../../shared/components/modal/modal.component';
+import { ButtonComponent } from '../../../shared/components/button/button.component';
 
 type UserInfoFormFields = {
   firstName: string;
@@ -55,11 +56,14 @@ type PermissionForm = {
     UserListRoutingModule,
     ReactiveFormsModule,
     ButtonComponent,
+    ModalComponent,
     RolesSectionComponent,
     FormSectionComponent,
   ],
 })
 export class UserListComponent implements OnInit {
+  @ViewChild(ModalComponent) modal!: ModalComponent;
+
   private readonly nameValidationString = '[a-zA-Z ]*';
   private readonly emailValidationString =
     '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
@@ -177,6 +181,18 @@ export class UserListComponent implements OnInit {
           console.warn('Response:', [...(response as any).entries()])
         );
     }
+  }
+
+  public openModal(): void {
+    this.modal.open();
+  }
+
+  public onConfirmClick(): void {
+    this.modal.close();
+  }
+
+  public onCancelClick(): void {
+    this.modal.close();
   }
 
   public onBlockClick() {}
