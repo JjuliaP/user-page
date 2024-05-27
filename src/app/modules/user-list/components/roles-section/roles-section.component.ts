@@ -13,7 +13,6 @@ import { BadgeComponent } from '../badge/badge.component';
 @Component({
   selector: 'app-roles-section',
   templateUrl: './roles-section.component.html',
-  styleUrl: './roles-section.component.scss',
   standalone: true,
   imports: [
     CommonModule,
@@ -23,10 +22,10 @@ import { BadgeComponent } from '../badge/badge.component';
   ],
 })
 export class RolesSectionComponent implements OnInit {
-  @Input() form!: FormGroup;
-  @Input() permissionItems: PermissionItem[] = [];
+  @Input() public form!: FormGroup;
+  @Input() public permissionItems: PermissionItem[] = [];
 
-  get formControls(): { [key: string]: AbstractControl } {
+  public get formControls(): { [key: string]: AbstractControl } {
     return this.form.controls;
   }
 

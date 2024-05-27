@@ -14,10 +14,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'angular-webchefs' title`, () => {
+  it(`should have the 'User Page' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-webchefs');
+    expect(app.title).toEqual('User Page');
   });
 
   it('should render title', () => {

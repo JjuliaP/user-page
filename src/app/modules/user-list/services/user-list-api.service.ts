@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { MockHeader } from '../../../interceptors/mock.interceptor';
+import { MockHeader } from '../../../constants/interceptor.constants';
 
 @Injectable()
 export class UserListApiService {

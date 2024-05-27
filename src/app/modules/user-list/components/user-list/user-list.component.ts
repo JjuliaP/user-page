@@ -48,7 +48,6 @@ type PermissionForm = {
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
-  styleUrl: './user-list.component.scss',
   providers: [UserListApiService],
   standalone: true,
   imports: [
